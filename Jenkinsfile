@@ -14,6 +14,7 @@ pipeline {
                 sh "sudo apt install npm"
                 sh "cd /var/lib/jenkins/workspace && npm install"
                 sh "pwd"
+                sh "composer update"
                 sh "composer install"
                 sh "cp .env.example .env"
                 sh "php artisan key:generate"
