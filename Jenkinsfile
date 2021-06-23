@@ -35,9 +35,11 @@ pipeline {
                 sh "vendor/bin/phpunit"
           }
        }
-        stage ("code quality") {
+      stage ("code quality SonarQube") {
           steps {
-                sh "phpunit --log-junit 'reports/unitreport.xml' --coverage-html 'reports/coverage' --coverage-clover 'reports/coverage/coverage.xml' tests"
+            script {
+        sh "pwd"
+        sh "/opt/sonar_scanner/bin/sonar-scanner -Dsonar.projectKey=ramuloramulaa -Dsonar.sources=. "
           }
        }        
    }      
