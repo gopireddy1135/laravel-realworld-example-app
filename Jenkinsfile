@@ -40,7 +40,8 @@ pipeline {
             script {
         sh "pwd"
         sh "/opt/sonar_scanner/bin/sonar-scanner -Dsonar.projectKey=ramuloramulaa -Dsonar.sources=. "
-          }
-       }        
-   }      
+           }
+        }        
+    }      
+  }
 }
